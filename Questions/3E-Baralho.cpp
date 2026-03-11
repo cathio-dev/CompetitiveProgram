@@ -14,9 +14,7 @@ int main() {
         cin >> P;
         pontos.push_back(P);
     }
-
-    cout << endl;
-
+    
     sort(pontos.begin(), pontos.end());
 
     for (int el : pontos)
