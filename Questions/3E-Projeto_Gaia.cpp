@@ -55,40 +55,52 @@ int main() {
         inter_XY.begin(), inter_XY.end(),
         inserter(exclusivo_X, exclusivo_X.begin())
         );
-
-    // 3 linha dif Y com inter
-
-    set_difference(set_Y.begin(), set_Y.end(),
+    
+        // 3 linha dif Y com inter
+        
+        set_difference(set_Y.begin(), set_Y.end(),
         inter_XY.begin(), inter_XY.end(),
         inserter(exclusivo_Y, exclusivo_Y.begin())
-        );
-
+    );
+    
+    
     // 4 soma do tamanho dos exclusives com o inter
-
+    
     int sum = exclusivo_X.size() + exclusivo_Y.size() + inter_XY.size();
-
+    
     for(int x : inter_XY)
     {
         cout << x << " ";
     }
 
+    if (inter_XY.size() == 0)
+    {
+        cout << 0;
+    }
+    
     cout << endl;
-
+    
     for(int x : exclusivo_X)
     {
         cout << x << " ";
     }
+    
+    if (exclusivo_X.size() == 0)
+        cout << 0;
 
     cout << endl;
-
+        
     for(int x : exclusivo_Y)
     {
         cout << x << " ";
     }
+        
+    if (exclusivo_Y.size() == 0)
+        cout << 0;
 
     cout << endl;
 
-    cout << sum;
+    cout << sum; // Total de especies diferentes int sum = exclusivo_X.size() + exclusivo_Y.size() + inter_XY.size();
 
     return 0;
 }
