@@ -1,0 +1,76 @@
+Danca casais
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int p;
+    cin >> p;
+
+    vector<int> homens(p);
+    vector<int> mulheres(p);
+
+    for (int i = 0; i < p; i++) {
+        cin >> homens[i];
+    }
+
+    for (int i = 0; i < p; i++) {
+        cin >> mulheres[i];
+    }
+
+    // ordena homens do maior pro menor
+    sort(homens.begin(), homens.end());
+    reverse(homens.begin(), homens.end());
+
+    // ordena mulheres do menor pro maior
+    sort(mulheres.begin(), mulheres.end());
+
+    for (int i = 0; i < p; i++) {
+        cout << homens[i] << " " << mulheres[i] << endl;
+    }
+
+    return 0;
+}
+
+Ajude lisa
+
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    map<long long, string> nome;
+    map<long long, string> telefone;
+
+    for (int i = 0; i < n; i++) {
+        long long matricula;
+        string tel, nomePai;
+
+        cin >> matricula >> tel >> nomePai;
+
+        nome[matricula] = nomePai;
+        telefone[matricula] = tel;
+    }
+
+    int c;
+    cin >> c;
+
+    for (int i = 0; i < c; i++) {
+        long long matricula;
+        cin >> matricula;
+
+        if (nome.count(matricula) > 0) {
+            cout << nome[matricula] << ": " << telefone[matricula] << endl;
+        } else {
+            cout << "Aluno nao encontrado" << endl;
+        }
+    }
+
+    return 0;
+}
