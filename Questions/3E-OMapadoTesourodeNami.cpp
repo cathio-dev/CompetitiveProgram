@@ -9,7 +9,7 @@ int main() {
 
     cin >> C;
 
-    for (int i; i < C; i++)
+    for (int i = 0; i < C; i++)
     {
         int mapx, mapy, mapb;
         cin >> mapx >> mapy >> mapb;
@@ -47,6 +47,20 @@ int main() {
     // isso eh tipo: vector de dentro com X para fazer uma linha com X colunas, e dps o vector de Y para multiplicá-las em linhas
     
     vector<vector<int>> mat(matrix_limitsY, vector<int>(matrix_limitsX, 0)); // matriz preenchida com zeros.
+
+    //debug
+
+    for (int i = 0; i < matrix_limitsY; i++)
+    {
+        for (int j = 0; j < matrix_limitsX; j++)
+        {
+            cout << mat[i][j];
+        }
+
+        cout << endl;
+        
+    }
+    
     
     return 0;
 }
